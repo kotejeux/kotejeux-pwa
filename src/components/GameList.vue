@@ -1,44 +1,53 @@
 <template>
   <div class="gameList">
     <ul>
-      <div class="item" v-for="game in games" :key="game.id">
-        <li>{{ game.name }}</li>
+      <div class="item" v-for="jeu in jeux" :key="jeu.id">
+        <li>{{ jeu.titre }}</li>
       </div>
     </ul>
   </div>
 </template>
 
-<script scoped>
+<script>
+import axios from "axios";
 export default {
   name: "gameList",
   data() {
     return {
-      games: [
-        {
-          id: 1,
-          name: "Galérapagos"
-        },
-        { id: 2, name: "Dominion" },
-        {
-          id: 3,
-          name: "Bang"
-        }
-      ]
+      jeux: null,
+      endpoint: "http://localhost:8000/api/jeux"
     };
+  },
+
+  created() {
+    this.getAllGames();
+  },
+
+  methods: {
+    getAllGames() {
+      axios
+        .get(this.endpoint)
+        .then(response => {
+          this.jeux = response.data;
+        })
+        .catch(error => {
+          console.log("------error-------");
+          console.log(error);
+        });
+    }
   }
 };
 </script>
 
 <style scoped>
 .item {
-  background: cornflowerblue;
   margin: 5px;
   margin-left: 0px;
   width: 90%;
   text-align: left;
   font-size: 20px;
   padding: 10px;
-  border: 2px solid grey;
+  border: 1px solid grey;
   border-radius: 5px;
 }
 
