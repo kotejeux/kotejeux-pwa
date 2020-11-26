@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       jeux: null,
-      endpoint: "http://test.kotejeux.be/api/jeux"
+      endpoint: "https://test.kotejeux.be/api/jeux"
     };
   },
 
