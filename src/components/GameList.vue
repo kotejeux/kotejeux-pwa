@@ -15,7 +15,7 @@ export default {
   data() {
     return {
       jeux: null,
-      endpoint: "http://localhost:8000/api/jeux"
+      endpoint: "http://test.kotejeux.be/api/jeux"
     };
   },
 
@@ -49,6 +49,11 @@ export default {
   padding: 10px;
   border: 1px solid grey;
   border-radius: 5px;
+  
+}
+
+.item:hover{
+  background-color: #008bca;
 }
 
 ul {
