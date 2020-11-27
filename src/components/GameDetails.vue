@@ -1,6 +1,9 @@
 <template>
   <div class="gameDetails">
-    <h2>Titre : {{ jeu.titre }}</h2>
+    <h2>{{ jeu.titre }}</h2>
+    <p>De {{ jeu.joueursMin }} à {{ jeu.joueursMax }} joueurs</p>
+    <p>Durée : {{ jeu.duree }} minutes</p>
+    <p id="description">{{ jeu.description }}</p>
   </div>
 </template>
 
@@ -36,3 +39,13 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.gameDetails {
+  margin: 10px;
+}
+
+#description {
+  text-align: justify;
+}
+</style>
