@@ -18,7 +18,7 @@ export default {
   },
 
   created() {
-    getGame();
+    this.getGame();
   },
 
   methods: {
