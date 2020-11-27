@@ -10,7 +10,7 @@
       <router-view></router-view>
     </main>
     <nav>
-      <router-link tag="button" to="gameList">Liste des jeux</router-link>
+      <router-link tag="button" v-bind:to="{name:'GameList'}">Liste des jeux</router-link>
     </nav>
   </div>
 </template>

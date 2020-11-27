@@ -2,7 +2,9 @@
   <div class="gameList">
     <ul>
       <div class="item" v-for="jeu in jeux" :key="jeu.id">
-        <li>{{ jeu.titre }}</li>
+        <router-link v-bind:to="{name: 'GameDetails', params: {id: jeu.id}}" tag="button">
+          {{ jeu.titre }}
+        </router-link>
       </div>
     </ul>
   </div>
@@ -40,7 +42,7 @@ export default {
 </script>
 
 <style scoped>
-.item {
+button {
   margin: 5px;
   margin-left: 0px;
   width: 90%;
@@ -49,11 +51,13 @@ export default {
   padding: 10px;
   border: 1px solid grey;
   border-radius: 5px;
-  
+  background-color: white;
+  color: black;
 }
 
-.item:hover{
+button:hover {
   background-color: #008bca;
+  color: white;
 }
 
 ul {
